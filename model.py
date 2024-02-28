@@ -8,6 +8,10 @@ import numpy as np
 import re
 import string
 import nltk
+import xgboost as xgb
+
+xgboost_version = xgb.__version__
+print("XGBoost version:", xgboost_version)
 nltk.download('stopwords')
 nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
@@ -77,8 +81,8 @@ class SentimentRecommenderModel:
     def classify_sentiment(self, review_text):
         review_text = self.preprocess_text(review_text)
         X = self.vectorizer.transform([review_text])
-        print(X)
         y_pred = self.model.predict(X)
+        # print(xgboost.__version__())
         print(y_pred)
         return y_pred
 
@@ -128,3 +132,6 @@ class SentimentRecommenderModel:
             tag[1])) for idx, tag in enumerate(word_pos_tags)]
         return " ".join(words)
     
+
+print(SentimentRecommenderModel().classify_sentiment('reviews is great'))
+print(SentimentRecommenderModel().getSentimentRecommendations('joshua'))
