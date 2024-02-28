@@ -77,6 +77,8 @@ class SentimentRecommenderModel:
     def classify_sentiment(self, review_text):
         review_text = self.preprocess_text(review_text)
         X = self.vectorizer.transform([review_text])
+        print(hasattr(self.model, 'use_label_encoder'))
+        
         y_pred = self.model.predict(X)
         return y_pred
 
@@ -125,3 +127,6 @@ class SentimentRecommenderModel:
         words = [self.lemmatizer.lemmatize(tag[0], self.get_wordnet_pos(
             tag[1])) for idx, tag in enumerate(word_pos_tags)]
         return " ".join(words)
+    
+
+SentimentRecommenderModel().classify_sentiment('reviews')
