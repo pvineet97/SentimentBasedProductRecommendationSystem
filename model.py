@@ -21,7 +21,7 @@ class SentimentRecommenderModel:
     MODEL_NAME = "sentiment-classification-xg-boost-model.pkl"
     VECTORIZER = "tfidf-vectorizer.pkl"
     RECOMMENDER = "user_final_rating.pkl"
-    CLEANED_DATA = "pickle_cleaned-data.pkl"
+    CLEANED_DATA = "cleaned-data.pkl"
 
     def __init__(self):
         self.model = pickle.load(open(
