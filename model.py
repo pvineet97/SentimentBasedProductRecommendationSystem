@@ -79,6 +79,7 @@ class SentimentRecommenderModel:
         X = self.vectorizer.transform([review_text])
         
         y_pred = self.model.predict(X)
+        print(y_pred[0])
         return y_pred
 
     #"""function to preprocess the text before it's sent to ML model"""
