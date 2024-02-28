@@ -77,7 +77,6 @@ class SentimentRecommenderModel:
     def classify_sentiment(self, review_text):
         review_text = self.preprocess_text(review_text)
         X = self.vectorizer.transform([review_text])
-        print(hasattr(self.model, 'use_label_encoder'))
         
         y_pred = self.model.predict(X)
         return y_pred
@@ -129,4 +128,3 @@ class SentimentRecommenderModel:
         return " ".join(words)
     
 
-SentimentRecommenderModel().classify_sentiment('reviews')
