@@ -77,9 +77,9 @@ class SentimentRecommenderModel:
     def classify_sentiment(self, review_text):
         review_text = self.preprocess_text(review_text)
         X = self.vectorizer.transform([review_text])
-        
+        print(X)
         y_pred = self.model.predict(X)
-        print(y_pred[0])
+        print(y_pred)
         return y_pred
 
     #"""function to preprocess the text before it's sent to ML model"""
@@ -128,4 +128,3 @@ class SentimentRecommenderModel:
             tag[1])) for idx, tag in enumerate(word_pos_tags)]
         return " ".join(words)
     
-
