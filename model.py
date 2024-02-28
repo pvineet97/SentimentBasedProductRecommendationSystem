@@ -17,7 +17,7 @@ nltk.download('omw-1.4')
 
 class SentimentRecommenderModel:
 
-    ROOT_PATH = "C/Users/vineetp/Desktop/ml_ai/CAPSTONE PROJECT SENTIMENT ANALYSIS/run/pickle/"
+    ROOT_PATH = "pickle/"
     MODEL_NAME = "sentiment-classification-xg-boost-model.pkl"
     VECTORIZER = "pickle_tfidf-vectorizer.pkl"
     RECOMMENDER = "user_final_rating.pkl"
